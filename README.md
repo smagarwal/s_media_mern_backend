@@ -11,7 +11,7 @@ Email: `sorengill@mypage.com`
 Password: `123`
 
 OR\
-You can register a new user by signing up. You may register using any ficticious details, and then use the registered email id and password to login.\
+You can register a new user by signing up. You may register using any fictitious details, and then use the registered email id and password to login.\
 Uploading profile pictures has been disabled on publicly accessible website.
 
 ## Website features
