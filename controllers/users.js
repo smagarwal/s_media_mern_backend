@@ -44,6 +44,27 @@ export const getUserFriends = async (req, res) => {
         res.status(404).json({error: err.message});
     }
 }; 
+//search function to mongo
+export const searchUser = async (req, res) => {
+
+    try {
+
+        const filt_in = req.body.searchText; 
+
+        const filt_users = await User.find({
+            $or:[
+                {firstName: { $regex : filt_in, $options : "i" }}, 
+                {lastName: { $regex: filt_in, $options: "i"}}
+            ]
+        }).select('_id firstName lastName picturePath').lean().exec();
+
+        res.status(200).json(filt_users);
+
+    }catch (err) {
+        res.status(404).json({error: err.message})
+    }
+
+}
 
 /* UPDATE */
 
